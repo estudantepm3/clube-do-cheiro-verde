@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube do Cheiro Verde - Assinatura Mensal de Temperos Artesanais</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        spice: {
+                            50: '#fffbe1',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                        },
+                        terracotta: {
+                            500: '#e05638',
+                            600: '#c84327',
+                            700: '#a2321b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #15803d 0%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-pattern {
+            background-color: #fdfbf7;
+            background-image: radial-gradient(#166534 0.5px, transparent 0.5px), radial-gradient(#166534 0.5px, #fdfbf7 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.05;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(22, 101, 52, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-[#fdfbf7] text-stone-800 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Announcement Bar -->
+    <div class="bg-brand-900 text-amber-200 text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+        <span class="bg-amber-500/20 text-amber-300 text-xs px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Cupom Novo</span>
+        <span>Ganhe <strong>15% OFF</strong> na primeira box com o cupom <span class="underline decoration-amber-400 font-bold">PRIMEIROSABOR</span></span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-[#fdfbf7]/90 backdrop-blur-md border-b border-stone-200/60 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-800 to-brand-600 flex items-center justify-center text-amber-300 shadow-md shadow-brand-900/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-leaf text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-brand-950 leading-none">Cheiro Verde</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-spice-700 mt-1">Clube de Temperos</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-stone-700">
+                <a href="#beneficios" class="hover:text-brand-700 transition-colors">Por que o Clube?</a>
+                <a href="#box" class="hover:text-brand-700 transition-colors">O que vem na Box</a>
+                <a href="#como-funciona" class="hover:text-brand-700 transition-colors">Como Funciona</a>
+                <a href="#quiz" class="hover:text-brand-700 transition-colors flex items-center gap-1.5 text-spice-700">
+                    <i class="fa-solid fa-wand-magic-sparkles text-xs"></i> Quiz do Tempero
+                </a>
+                <a href="#planos" class="hover:text-brand-700 transition-colors">Planos</a>
+                <a href="#faq" class="hover:text-brand-700 transition-colors">Dúvidas</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="#planos" class="bg-brand-800 hover:bg-brand-700 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-brand-900/15 hover:shadow-brand-900/30 transition-all duration-200 active:scale-95 flex items-center gap-2">
+                    <i class="fa-solid fa-basket-shopping text-amber-300 text-xs"></i>
+                    <span>Quero Assinar</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-700 hover:text-brand-800 focus:outline-none" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#fdfbf7] border-b border-stone-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beneficios" class="mobile-link block py-2 text-stone-800 font-semibold border-b border-stone-100">Por que o Clube?</a>
+            <a href="#box" class="mobile-link block py-2 text-stone-800 font-semibold border-b border-stone-100">O que vem na Box</a>
+            <a href="#como-funciona" class="mobile-link block py-2 text-stone-800 font-semibold border-b border-stone-100">Como Funciona</a>
+            <a href="#quiz" class="mobile-link block py-2 text-spice-700 font-semibold border-b border-stone-100 flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Descubra seu Tempero
+            </a>
+            <a href="#planos" class="mobile-link block py-2 text-stone-800 font-semibold border-b border-stone-100">Planos & Preços</a>
+            <a href="#faq" class="mobile-link block py-2 text-stone-800 font-semibold">Dúvidas Frequentes</a>
+            <a href="#planos" class="mobile-link w-full mt-4 bg-brand-800 text-white font-bold text-center py-3 rounded-xl block shadow-md">
+                Quero Assinar Agora
+            </a>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden pt-8 pb-16 md:pt-16 md:pb-24">
+        <!-- Glow accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-200/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-spice-200/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Copy -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brand-100 border border-brand-200 text-brand-900 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-sm">
+                        <i class="fa-solid fa-seedling text-brand-600"></i>
+                        <span>100% Artesanal • Sem Conservantes • Curadoria Mensal</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight leading-[1.15]">
+                        Sua cozinha com cheiro de <span class="gradient-text italic">comida de verdade</span> todos os dias.
+                    </h1>
+
+                    <p class="text-stone-600 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Receba todo mês uma caixa com a riqueza dos temperos brasileiros artesanais, sais aromáticos, blends exclusivos e receitas de chefs direto na sua casa.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#planos" class="w-full sm:w-auto bg-brand-800 hover:bg-brand-700 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-brand-900/20 hover:shadow-brand-900/35 transition-all duration-200 flex items-center justify-center gap-3 group">
+                            <span>Experimentar este mês</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#quiz" class="w-full sm:w-auto bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-300 font-bold text-base px-6 py-4 rounded-2xl transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-pepper-hot text-terracotta-500"></i>
+                            <span>Descubra seu perfil de sabor</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-6 border-t border-stone-200/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                        <div>
+                            <p class="font-serif font-extrabold text-2xl text-stone-900">+4.500</p>
+                            <p class="text-xs text-stone-500 font-medium">Assinantes felizes</p>
+                        </div>
+                        <div>
+                            <p class="font-serif font-extrabold text-2xl text-stone-900">4.9 ★</p>
+                            <p class="text-xs text-stone-500 font-medium">Avaliação média</p>
+                        </div>
+                        <div>
+                            <p class="font-serif font-extrabold text-2xl text-stone-900">Zero</p>
+                            <p class="text-xs text-stone-500 font-medium">Fidelidade forçada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Box Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Box Card Visual -->
+                        <div class="bg-gradient-to-br from-brand-900 via-brand-950 to-stone-900 rounded-3xl p-6 sm:p-8 text-white shadow-2xl relative overflow-hidden border border-brand-800">
+                            <!-- Subtle leaf watermark -->
+                            <i class="fa-solid fa-leaf absolute -right-10 -bottom-10 text-[200px] text-white/5 pointer-events-none"></i>
+                            
+                            <!-- Box Header Badge -->
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="bg-amber-400 text-brand-950 font-extrabold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Edição do Mês: Origens Mineiras</span>
+                                <span class="text-stone-300 text-xs font-semibold"><i class="fa-regular fa-calendar-check mr-1"></i> Lote Limitado</span>
+                            </div>
+
+                            <!-- Mock items in the box -->
+                            <div class="space-y-3 my-6">
+                                <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl flex items-center gap-4 border border-white/10 hover:bg-white/15 transition-colors">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-jar"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-sm text-stone-100 truncate">Sal de Ervas da Serra da Mantiqueira</h4>
+                                        <p class="text-xs text-stone-300 truncate">Com alecrim orgânico, tomilho e alho defumado</p>
+                                    </div>
+                                    <span class="text-xs font-bold text-amber-300 bg-amber-950/60 px-2 py-1 rounded">110g</span>
+                                </div>
+
+                                <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl flex items-center gap-4 border border-white/10 hover:bg-white/15 transition-colors">
+                                    <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-pepper-hot"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-sm text-stone-100 truncate">Chimichurri Caipira Especial</h4>
+                                        <p class="text-xs text-stone-300 truncate">Com pimenta de cheiro e salsa desidratada no sol</p>
+                                    </div>
+                                    <span class="text-xs font-bold text-amber-300 bg-amber-950/60 px-2 py-1 rounded">90g</span>
+                                </div>
+
+                                <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl flex items-center gap-4 border border-white/10 hover:bg-white/15 transition-colors">
+                                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-mortar-pestle"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-sm text-stone-100 truncate">Blend Cheiro Verde da Vovó</h4>
+                                        <p class="text-xs text-stone-300 truncate">Cebolinha, salsinha e louro moído na hora</p>
+                                    </div>
+                                    <span class="text-xs font-bold text-amber-300 bg-amber-950/60 px-2 py-1 rounded">85g</span>
+                                </div>
+
+                                <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl flex items-center gap-4 border border-white/10 hover:bg-white/15 transition-colors">
+                                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-book-open"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-sm text-stone-100 truncate">3 Cards de Receita do Chef</h4>
+                                        <p class="text-xs text-stone-300 truncate">Passo a passo exclusivo com harmonização</p>
+                                    </div>
+                                    <span class="text-xs font-bold text-emerald-300 bg-emerald-950/60 px-2 py-1 rounded">+ Brinde</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-stone-300">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-truck-fast text-amber-400"></i> Frete grátis para Sudeste no plano anual</span>
+                                <span class="font-bold text-amber-300">R$ 59,90/mês</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-stone-200 hidden sm:flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-stone-900">Produtores Locais</p>
+                                <p class="text-[11px] text-stone-500">Apoio à agricultura familiar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Brands / Features Bar -->
+    <section class="bg-brand-900 text-brand-100 py-6 border-y border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-xs sm:text-sm font-semibold">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-seedling text-amber-300 text-lg"></i>
+                    <span>Ingredientes 100% Naturais</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-ban text-red-400 text-lg"></i>
+                    <span>Sem Conservantes ou MSG</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-rotate-left text-amber-300 text-lg"></i>
+                    <span>Cancele Quando Quiser</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-box-open text-amber-300 text-lg"></i>
+                    <span>Caixa Sustentável Reciclável</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-spice-700 font-bold text-xs uppercase tracking-widest bg-spice-100 px-3 py-1 rounded-full">Por que assinar?</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-stone-900">Muito mais sabor, saúde e praticidade na sua cozinha</h2>
+                <p class="text-stone-600 text-base sm:text-lg">Diga adeus aos temperos industrializados cheios de sódio e sódio excessivo. Descubra o verdadeiro perfume dos condimentos artesanais.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow relative group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-800 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mortar-pestle"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Produção Fresca & Lote Pequeno</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Nossos temperos são moídos, desidratados e embalados poucos dias antes de chegarem na sua porta, preservando óleos essenciais e aroma incomparável.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow relative group">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-spice-700 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Biodiversidade Brasileira</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Exploramos biomas brasileiros (Cerrado, Caatinga, Mata Atlântica) para trazer ervas, pimentas suaves e sementes raras diretamente de pequenos agricultores.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow relative group">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-700 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Guias de Harmonização</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Cada box acompanha cards ilustrados mostrando exatamente onde usar cada pote: carnes, vegetais grelhados, massas, risotos e petiscos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz Section -->
+    <section id="quiz" class="py-16 bg-gradient-to-b from-stone-50 to-brand-950 text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-900 border border-brand-700 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="text-center space-y-3 mb-8">
+                    <span class="bg-amber-400 text-brand-950 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Quiz Interativo</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold">Qual o tempero que não pode faltar no seu prato?</h2>
+                    <p class="text-brand-200 text-sm">Responda em 30 segundos e descubra a recomendação ideal para o seu paladar.</p>
+                </div>
+
+                <!-- Quiz Steps Container -->
+                <div id="quiz-container" class="space-y-6">
+                    <!-- Step 1 -->
+                    <div id="quiz-step-1" class="quiz-step space-y-4">
+                        <p class="font-semibold text-center text-amber-200 text-base">1. Qual seu nível de afinidade com pimentas?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button onclick="nextQuizStep(1, 'suave')" class="p-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-left transition-all">
+                                <span class="block text-xl mb-1">🌱 Suave</span>
+                                <span class="text-xs text-stone-300">Gosto só do cheiro e aroma, zero ardência.</span>
+                            </button>
+                            <button onclick="nextQuizStep(1, 'moderado')" class="p-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-left transition-all">
+                                <span class="block text-xl mb-1">🌶️ Moderado</span>
+                                <span class="text-xs text-stone-300">Uma pimentinha de cheiro ou biquinho vai super bem!</span>
+                            </button>
+                            <button onclick="nextQuizStep(1, 'intenso')" class="p-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-left transition-all">
+                                <span class="block text-xl mb-1">🔥 Intenso</span>
+                                <span class="text-xs text-stone-300">Quanto mais sabor e calor, melhor!</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div id="quiz-step-2" class="quiz-step hidden space-y-4">
+                        <p class="font-semibold text-center text-amber-200 text-base">2. O que você mais costuma cozinhar no dia a dia?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button onclick="nextQuizStep(2, 'dia-a-dia')" class="p-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-left transition-all">
+                                <span class="block text-xl mb-1">🍚 Comida de Mãe</span>
+                                <span class="text-xs text-stone-300">Arroz, feijão temperadinho, grelhados e saladas.</span>
+                            </button>
+                            <button onclick="nextQuizStep(2, 'gourmet')" class="p-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-left transition-all">
+                                <span class="block text-xl mb-1">🥩 Churrasco e Assados</span>
+                                <span class="text-xs text-stone-300">Carnes nobres, vegetais assados e marinadas.</span>
+                            </button>
+                            <button onclick="nextQuizStep(2, 'fit')" class="p-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-left transition-all">
+                                <span class="block text-xl mb-1">🥗 Pratos Leves & Vegs</span>
+                                <span class="text-xs text-stone-300">Legumes, grãos, peixes e sopas aromáticas.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step Result -->
+                    <div id="quiz-result" class="quiz-step hidden space-y-4 text-center">
+                        <div class="w-16 h-16 rounded-full bg-amber-400 text-brand-950 flex items-center justify-center text-3xl mx-auto">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-amber-300" id="quiz-result-title">Seu Perfil: Chef Mestre do Tempero!</h3>
+                        <p class="text-stone-200 text-sm max-w-lg mx-auto" id="quiz-result-desc">
+                            Sua combinação perfeita é o <strong>Plano Cheiro Verde</strong>, incluindo nossos sais de ervas da serra e blends aromáticos sem conservantes.
+                        </p>
+                        <div class="pt-2 flex justify-center gap-4">
+                            <a href="#planos" class="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold px-6 py-3 rounded-xl transition-colors text-sm">
+                                Ver Plano Recomendado
+                            </a>
+                            <button onclick="resetQuiz()" class="text-stone-300 underline text-xs">Refazer Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="como-funciona" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-700 font-bold text-xs uppercase tracking-widest bg-brand-100 px-3 py-1 rounded-full">Passo a Passo</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-stone-900">Como funciona o Clube do Cheiro Verde</h2>
+                <p class="text-stone-600 text-base">Em poucos cliques, você transforma suas refeições do dia a dia em uma experiência gastronômica.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="text-center p-6 rounded-2xl bg-stone-50 border border-stone-200/60 relative">
+                    <div class="w-12 h-12 rounded-full bg-brand-800 text-amber-300 font-extrabold text-xl flex items-center justify-center mx-auto mb-4 shadow-md">1</div>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Escolha seu Plano</h3>
+                    <p class="text-stone-600 text-sm">Selecione o tamanho da box ideal para a rotina da sua casa (de 3 a 6 itens por mês).</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center p-6 rounded-2xl bg-stone-50 border border-stone-200/60 relative">
+                    <div class="w-12 h-12 rounded-full bg-brand-800 text-amber-300 font-extrabold text-xl flex items-center justify-center mx-auto mb-4 shadow-md">2</div>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Curadoria & Envio</h3>
+                    <p class="text-stone-600 text-sm">Massa, pimentas suaves e ervas são selecionadas e enviadas frescas na sua porta todo mês.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center p-6 rounded-2xl bg-stone-50 border border-stone-200/60 relative">
+                    <div class="w-12 h-12 rounded-full bg-brand-800 text-amber-300 font-extrabold text-xl flex items-center justify-center mx-auto mb-4 shadow-md">3</div>
+                    <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Revolucione suas Receitas</h3>
+                    <p class="text-stone-600 text-sm">Siga nossas fichas de receitas exclusivas e receba elogios de toda a família.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Box Interactive Showcase / Products Grid -->
+    <section id="box" class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <span class="text-spice-700 font-bold text-xs uppercase tracking-widest bg-spice-100 px-3 py-1 rounded-full">Exemplos de Temperos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-stone-900">O que costuma vir nas nossas caixas?</h2>
+                <p class="text-stone-600 text-base">Uma rotação mensal com o melhor das ervas brasileiras e especiarias de origem controlada.</p>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="bg-gradient-to-tr from-amber-100 to-amber-50 h-44 flex items-center justify-center relative overflow-hidden">
+                        <i class="fa-solid fa-jar text-6xl text-amber-600/70 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-3 right-3 bg-white text-stone-800 text-[10px] font-bold px-2 py-1 rounded-full border border-stone-200">Artesanal</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-xs font-bold text-spice-700 uppercase tracking-wider">Sal de Ervas</span>
+                        <h4 class="font-serif text-lg font-bold text-stone-900">Sal Marinho com Ervas Finas</h4>
+                        <p class="text-xs text-stone-500">Sal rosa, tomilho, alecrim, orégano e raspas de limão siciliano.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="bg-gradient-to-tr from-emerald-100 to-emerald-50 h-44 flex items-center justify-center relative overflow-hidden">
+                        <i class="fa-solid fa-mortar-pestle text-6xl text-brand-600/70 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-3 right-3 bg-white text-stone-800 text-[10px] font-bold px-2 py-1 rounded-full border border-stone-200">Mais Vendido</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Blend de Ervas</span>
+                        <h4 class="font-serif text-lg font-bold text-stone-900">Cheiro Verde da Roça</h4>
+                        <p class="text-xs text-stone-500">Salsa verde, cebolinha caipira, alho frito e um toque de louro.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="bg-gradient-to-tr from-red-100 to-red-50 h-44 flex items-center justify-center relative overflow-hidden">
+                        <i class="fa-solid fa-pepper-hot text-6xl text-terracotta-500/70 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-3 right-3 bg-white text-stone-800 text-[10px] font-bold px-2 py-1 rounded-full border border-stone-200">Exclusivo</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-xs font-bold text-terracotta-600 uppercase tracking-wider">Especiarias</span>
+                        <h4 class="font-serif text-lg font-bold text-stone-900">Pimenta Biquinho Defumada</h4>
+                        <p class="text-xs text-stone-500">Zero ardência, aroma defumado natural em lenha de macieira.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="bg-gradient-to-tr from-purple-100 to-purple-50 h-44 flex items-center justify-center relative overflow-hidden">
+                        <i class="fa-solid fa-utensils text-6xl text-purple-600/70 group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-3 right-3 bg-white text-stone-800 text-[10px] font-bold px-2 py-1 rounded-full border border-stone-200">Mimos</span>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">Acessório do Mês</span>
+                        <h4 class="font-serif text-lg font-bold text-stone-900">Colher de Madeira & Cards</h4>
+                        <p class="text-xs text-stone-500">Utensílio artesanal em madeira de reflorestamento + 3 receitas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="planos" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <span class="text-brand-700 font-bold text-xs uppercase tracking-widest bg-brand-100 px-3 py-1 rounded-full">Escolha sua Assinatura</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-stone-900">Planos sem fidelidade, cancele quando quiser</h2>
+                <p class="text-stone-600 text-base">Entregamos sabor e afeto em potes de vidro reutilizáveis.</p>
+
+                <!-- Billing Toggle -->
+                <div class="flex items-center justify-center gap-4 pt-4">
+                    <span id="label-mensal" class="text-sm font-bold text-stone-900">Plano Mensal</span>
+                    <button id="plan-toggle" onclick="toggleBilling()" class="w-14 h-8 bg-brand-800 rounded-full p-1 relative transition-colors focus:outline-none" aria-label="Alternar Faturamento">
+                        <div id="toggle-circle" class="w-6 h-6 bg-amber-300 rounded-full transition-transform"></div>
+                    </button>
+                    <span id="label-anual" class="text-sm font-bold text-stone-500 flex items-center gap-1.5">
+                        Plano Anual <span class="bg-amber-100 text-spice-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase">Economize 20% + Frete Grátis</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Pricing Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Plan 1: Brotinho -->
+                <div class="bg-stone-50 rounded-3xl p-8 border border-stone-200 flex flex-col justify-between hover:border-brand-300 transition-all">
+                    <div>
+                        <span class="text-xs font-bold text-stone-500 uppercase tracking-widest">Ideal para quem mora só</span>
+                        <h3 class="font-serif text-2xl font-bold text-stone-900 mt-1 mb-4">Plano Brotinho</h3>
+                        
+                        <div class="mb-6">
+                            <span class="text-3xl font-extrabold text-stone-900 billing-price" data-mensal="R$ 39,90" data-anual="R$ 31,90">R$ 39,90</span>
+                            <span class="text-xs text-stone-500">/mês</span>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-stone-600 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> <strong>2 Potes</strong> de Temperos (70g cada)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> 1 Sal Temperado Especial</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> 2 Cards de Receitas Ilustradas</li>
+                            <li class="flex items-center gap-2 text-stone-400"><i class="fa-solid fa-xmark"></i> Sem brinde do mês</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openCheckout('Plano Brotinho')" class="w-full bg-stone-200 hover:bg-stone-300 text-stone-900 font-bold py-3.5 rounded-xl transition-colors text-center">
+                        Assinar Brotinho
+                    </button>
+                </div>
+
+                <!-- Plan 2: Cheiro Verde (Featured) -->
+                <div class="bg-brand-900 text-white rounded-3xl p-8 border-2 border-amber-400 flex flex-col justify-between shadow-xl relative transform md:-translate-y-2">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-brand-950 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                        ⭐ Mais Popular
+                    </span>
+
+                    <div>
+                        <span class="text-xs font-bold text-amber-300 uppercase tracking-widest">O queridinho das famílias</span>
+                        <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-4">Plano Cheiro Verde</h3>
+                        
+                        <div class="mb-6">
+                            <span class="text-4xl font-extrabold text-amber-300 billing-price" data-mensal="R$ 59,90" data-anual="R$ 47,90">R$ 59,90</span>
+                            <span class="text-xs text-stone-300">/mês</span>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-brand-100 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> <strong>4 Potes</strong> de Temperos Selecionados</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> 1 Blend Exclusivo da Estação</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> 3 Cards de Receita com Harmonização</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> <strong>Acessório Surpresa do Mês</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> Frete Fixo Reduzido</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openCheckout('Plano Cheiro Verde')" class="w-full bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold py-4 rounded-xl transition-all text-center shadow-lg hover:shadow-amber-400/20">
+                        Quero o Plano Cheiro Verde
+                    </button>
+                </div>
+
+                <!-- Plan 3: Chef Master -->
+                <div class="bg-stone-50 rounded-3xl p-8 border border-stone-200 flex flex-col justify-between hover:border-brand-300 transition-all">
+                    <div>
+                        <span class="text-xs font-bold text-stone-500 uppercase tracking-widest">Para quem ama cozinhar</span>
+                        <h3 class="font-serif text-2xl font-bold text-stone-900 mt-1 mb-4">Plano Chef Master</h3>
+                        
+                        <div class="mb-6">
+                            <span class="text-3xl font-extrabold text-stone-900 billing-price" data-mensal="R$ 89,90" data-anual="R$ 71,90">R$ 89,90</span>
+                            <span class="text-xs text-stone-500">/mês</span>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-stone-600 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> <strong>6 Potes</strong> de Temperos & Sais Especiais</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> 2 Blends Premium Importados/Raros</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Livreto de Receitas do Chef Curador</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Utensílio Gourmet em Madeira/Cerâmica</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-600"></i> Acesso à comunidade secreta de receitas</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openCheckout('Plano Chef Master')" class="w-full bg-brand-800 hover:bg-brand-700 text-white font-bold py-3.5 rounded-xl transition-colors text-center">
+                        Assinar Chef Master
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="py-20 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-spice-700 font-bold text-xs uppercase tracking-widest bg-spice-100 px-3 py-1 rounded-full">Comunidade de Amantes de Tempero</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-stone-900">O que dizem nossas cozinheiras e cozinheiros</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-600 text-sm italic">"Mudei completamente a forma como tempero meu arroz e feijão! O Sal de Ervas da Mantiqueira é surreal de cheiroso."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 font-bold text-emerald-800 flex items-center justify-center text-sm">MC</div>
+                        <div>
+                            <p class="font-bold text-xs text-stone-900">Mariana Costa</p>
+                            <p class="text-[11px] text-stone-500">São Paulo, SP • Assinante há 8 meses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-600 text-sm italic">"Os cards de receita são incríveis. Sempre que chega a caixinha virou um ritual no final de semana testar uma receita nova."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 font-bold text-spice-800 flex items-center justify-center text-sm">RS</div>
+                        <div>
+                            <p class="font-bold text-xs text-stone-900">Rodrigo Silva</p>
+                            <p class="text-[11px] text-stone-500">Belo Horizonte, MG • Assinante há 1 ano</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-600 text-sm italic">"Adoro saber que estou apoiando pequenos produtores locais e comendo sem nenhum conservante químico. Recomendo demais!"</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 font-bold text-purple-800 flex items-center justify-center text-sm">CA</div>
+                        <div>
+                            <p class="font-bold text-xs text-stone-900">Camila Andrade</p>
+                            <p class="text-[11px] text-stone-500">Curitiba, PR • Assinante há 4 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 space-y-3">
+                <span class="text-brand-700 font-bold text-xs uppercase tracking-widest bg-brand-100 px-3 py-1 rounded-full">Tire Suas Dúvidas</span>
+                <h2 class="font-serif text-3xl font-extrabold text-stone-900">Perguntas Frequentes</h2>
+            </div>
+
+            <div class="space-y-4" id="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="border border-stone-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-stone-900 bg-stone-50 flex justify-between items-center hover:bg-stone-100 transition-colors">
+                        <span>Qual a validade dos temperos artesanais?</span>
+                        <i class="fa-solid fa-chevron-down text-stone-500 transition-transform"></i>
+                    </button>
+                    <div class="hidden p-5 text-stone-600 text-sm bg-white border-t border-stone-100 leading-relaxed">
+                        Nossos temperos desidratados têm validade média de 6 a 12 meses quando armazenados em local seco e ao abrigo da luz. Como não usamos conservantes químicos, a moagem recente garante sabor intenso durante todo esse período.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-stone-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-stone-900 bg-stone-50 flex justify-between items-center hover:bg-stone-100 transition-colors">
+                        <span>Posso cancelar minha assinatura a qualquer momento?</span>
+                        <i class="fa-solid fa-chevron-down text-stone-500 transition-transform"></i>
+                    </button>
+                    <div class="hidden p-5 text-stone-600 text-sm bg-white border-t border-stone-100 leading-relaxed">
+                        Sim! No plano mensal você não tem nenhuma fidelidade. Pode pausar, trocar de plano ou cancelar diretamente no seu painel com apenas um clique antes da data de faturamento do mês seguinte.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-stone-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-stone-900 bg-stone-50 flex justify-between items-center hover:bg-stone-100 transition-colors">
+                        <span>Como funciona o frete e as entregas?</span>
+                        <i class="fa-solid fa-chevron-down text-stone-500 transition-transform"></i>
+                    </button>
+                    <div class="hidden p-5 text-stone-600 text-sm bg-white border-t border-stone-100 leading-relaxed">
+                        Enviamos para todo o Brasil via Correios e transportadoras parceiras. As caixas são despachadas sempre no dia 10 de cada mês. No plano anual, oferecemos frete grátis para todo o Sudeste!
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-stone-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-stone-900 bg-stone-50 flex justify-between items-center hover:bg-stone-100 transition-colors">
+                        <span>Tenho alergias alimentares ou restrições de sódio. Posso assinar?</span>
+                        <i class="fa-solid fa-chevron-down text-stone-500 transition-transform"></i>
+                    </button>
+                    <div class="hidden p-5 text-stone-600 text-sm bg-white border-t border-stone-100 leading-relaxed">
+                        Sim! Todas as nossas embalagens possuem rótulo com a composição completa. Além disso, temos opções de blends com zero adição de sal, focando 100% no aroma de ervas e especiarias puras.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="py-16 bg-brand-900 text-white border-t border-brand-800">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+            <h2 class="font-serif text-3xl font-bold">Quer receber receitas e dicas de tempero grátis no seu e-mail?</h2>
+            <p class="text-brand-200 text-sm max-w-lg mx-auto">Inscreva-se na nossa newsletter "Segredos do Cheiro Verde" e ganhe um e-book em PDF com 15 temperos caseiros.</p>
+            <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" required placeholder="Seu e-mail preferido..." class="px-5 py-3.5 rounded-xl bg-white text-stone-900 placeholder-stone-400 text-sm flex-1 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                <button type="submit" class="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold px-6 py-3.5 rounded-xl transition-colors text-sm shrink-0">
+                    Quero Receber
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-950 text-stone-400 py-12 border-t border-brand-900 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-brand-800 flex items-center justify-center text-amber-300">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <span class="font-serif text-xl font-bold text-white">Cheiro Verde</span>
+                    </div>
+                    <p class="text-xs text-stone-400 leading-relaxed">O verdadeiro sabor da culinária artesanal brasileira entregue na sua porta todo mês.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3">Navegação</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#beneficios" class="hover:text-amber-300 transition-colors">Por que o Clube?</a></li>
+                        <li><a href="#box" class="hover:text-amber-300 transition-colors">O que vem na Box</a></li>
+                        <li><a href="#planos" class="hover:text-amber-300 transition-colors">Planos & Preços</a></li>
+                        <li><a href="#quiz" class="hover:text-amber-300 transition-colors">Quiz de Tempero</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3">Atendimento</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><i class="fa-brands fa-whatsapp mr-2 text-brand-500"></i> (11) 99876-5432</li>
+                        <li><i class="fa-regular fa-envelope mr-2 text-brand-500"></i> contato@clubecheiroverde.com.br</li>
+                        <li><i class="fa-solid fa-location-dot mr-2 text-brand-500"></i> Serra da Mantiqueira, SP</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3">Redes Sociais</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-900 flex items-center justify-center text-white hover:bg-brand-800 transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-900 flex items-center justify-center text-white hover:bg-brand-800 transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-900 flex items-center justify-center text-white hover:bg-brand-800 transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-brand-900 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-4">
+                <p>© 2026 Clube do Cheiro Verde - Todos os direitos reservados. Feito com amor e tempero artesanal.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Termos de Uso</a>
+                    <a href="#" class="hover:underline">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Checkout Simulation -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-stone-200">
+            <button onclick="closeCheckout()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700 text-xl font-bold p-2" aria-label="Fechar">
+                &times;
+            </button>
+            
+            <div class="text-center space-y-2 mb-6">
+                <div class="w-12 h-12 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center mx-auto text-xl font-bold">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-stone-900">Finalizar Assinatura</h3>
+                <p class="text-xs text-stone-500">Você selecionou o <strong id="modal-plan-title" class="text-brand-800">Plano Cheiro Verde</strong></p>
+            </div>
+
+            <form onsubmit="handleCheckoutSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">Nome Completo</label>
+                    <input type="text" required placeholder="Seu nome" class="w-full p-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">E-mail para confirmação</label>
+                    <input type="email" required placeholder="seu@email.com" class="w-full p-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">CEP de Entrega</label>
+                    <input type="text" required placeholder="00000-000" class="w-full p-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
+                </div>
+
+                <div class="p-3 bg-brand-50 rounded-xl border border-brand-200 text-xs text-brand-900 space-y-1">
+                    <div class="flex justify-between font-bold">
+                        <span>Resumo do Pedido:</span>
+                        <span id="modal-plan-price">R$ 59,90/mês</span>
+                    </div>
+                    <p class="text-[11px] text-brand-700">Sem taxa de adesão • Cancele quando quiser</p>
+                </div>
+
+                <button type="submit" class="w-full bg-brand-800 hover:bg-brand-700 text-white font-bold py-3.5 rounded-xl transition-colors shadow-lg text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-lock text-amber-300 text-xs"></i>
+                    <span>Ir para Pagamento Seguro</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom Toast Message Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+    <script>
+        // Billing Cycle Toggle (Mensal vs Anual)
+        let isAnnual = false;
+        function toggleBilling() {
+            isAnnual = !isAnnual;
+            const toggleCircle = document.getElementById('toggle-circle');
+            const labelMensal = document.getElementById('label-mensal');
+            const labelAnual = document.getElementById('label-anual');
+            const prices = document.querySelectorAll('.billing-price');
+
+            if (isAnnual) {
+                toggleCircle.style.transform = 'translateX(24px)';
+                labelMensal.classList.replace('text-stone-900', 'text-stone-500');
+                labelAnual.classList.replace('text-stone-500', 'text-stone-900');
+                prices.forEach(p => p.textContent = p.getAttribute('data-anual'));
+            } else {
+                toggleCircle.style.transform = 'translateX(0px)';
+                labelAnual.classList.replace('text-stone-900', 'text-stone-500');
+                labelMensal.classList.replace('text-stone-500', 'text-stone-900');
+                prices.forEach(p => p.textContent = p.getAttribute('data-mensal'));
+            }
+        }
+
+        // Mobile Menu Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // FAQ Accordion Toggle
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            const isOpen = !content.classList.contains('hidden');
+
+            // Close all
+            document.querySelectorAll('#faq-accordion > div > div').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('#faq-accordion i').forEach(el => el.style.transform = 'rotate(0deg)');
+
+            if (!isOpen) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Interactive Quiz Logic
+        let quizAnswers = {};
+        function nextQuizStep(step, answer) {
+            quizAnswers[step] = answer;
+            document.getElementById(`quiz-step-${step}`).classList.add('hidden');
+            
+            if (step === 1) {
+                document.getElementById('quiz-step-2').classList.remove('hidden');
+            } else if (step === 2) {
+                document.getElementById('quiz-result').classList.remove('hidden');
+                
+                // Customize result based on answers
+                const title = document.getElementById('quiz-result-title');
+                const desc = document.getElementById('quiz-result-desc');
+                
+                if (quizAnswers[1] === 'intenso') {
+                    title.textContent = 'Seu Perfil: Mestre das Pimentas & Especiarias!';
+                    desc.innerHTML = 'Você ama sabores marcantes! Recomendamos o <strong>Plano Chef Master</strong>, que traz nossas pimentas artesanais defumadas e chimichurris especiais.';
+                } else if (quizAnswers[2] === 'fit') {
+                    title.textContent = 'Seu Perfil: Cozinha Leve & Aromática!';
+                    desc.innerHTML = 'Você valoriza ervas puras e sais com baixo sódio. O <strong>Plano Cheiro Verde</strong> traz a combinação perfeita de sais de ervas da serra e temperos verdes desidratados.';
+                } else {
+                    title.textContent = 'Seu Perfil: Sabor Tradicional Caipira!';
+                    desc.innerHTML = 'O <strong>Plano Cheiro Verde</strong> foi feito sob medida para dar aquele toque de comida caseira irresistível às suas refeições.';
+                }
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-step-2').classList.add('hidden');
+            document.getElementById('quiz-step-1').classList.remove('hidden');
+            quizAnswers = {};
+        }
+
+        // Modal Checkout Handling
+        function openCheckout(planName) {
+            document.getElementById('modal-plan-title').textContent = planName;
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function handleCheckoutSubmit(e) {
+            e.preventDefault();
+            closeCheckout();
+            showToast('🌱 Pedido iniciado com sucesso! Redirecionando para o ambiente de pagamento...', 'success');
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            e.target.reset();
+            showToast('🎁 E-book enviado! Verifique sua caixa de entrada em instantes.', 'success');
+        }
+
+        // Toast Notification System
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `p-4 rounded-2xl shadow-xl text-xs font-bold flex items-center gap-3 transition-all duration-300 transform translate-y-2 opacity-0 max-w-sm ${
+                type === 'success' ? 'bg-brand-900 text-white border border-brand-700' : 'bg-stone-900 text-white'
+            }`;
+            toast.innerHTML = `<span>${message}</span>`;
+            
+            container.appendChild(toast);
+            
+            // Animate in
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            // Remove after 4s
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
