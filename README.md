@@ -1,10 +1,6 @@
-# Clube do cheiro verde
-
-Uma descrição falando sobre o projeto...
-Um novo parágrafo...
-
-## Como usar esse projeto?
-
-Uma nova descrição...
-
-> Texto em destaque!
+🍃 Clube do Cheiro Verde — Landing PageLanding page moderna, responsiva e interativa para um clube de assinatura mensal de temperos e especiarias artesanais brasileiras.📌 Sobre o ProjetoO Clube do Cheiro Verde é um conceito de serviço de assinatura focado em levar mensalmente para a casa dos assinantes uma curadoria exclusiva de temperos, sais aromáticos, blends artesanais e especiarias de pequenos produtores rurais do Brasil.Esta landing page foi construída com foco em alta conversão, experiência de usuário fluida e identidade visual acolhedora (com tons terrosos, verde botânico e dourado especiaria).✨ Funcionalidades Principais📱 Layout Totalmente Responsivo: Adaptável para dispositivos móveis, tablets e desktops.🧙‍♂️ Quiz Interativo do Tempero: Questionário dinâmico em etapas que identifica o perfil de sabor do visitante e recomenda o plano ideal.💳 Alternador de Planos (Mensal vs. Anual): Exibição em tempo real do desconto de 20% e frete grátis ao comutar para o plano anual.🛍️ Simulação de Checkout (Modal): Pop-up responsivo para captação de dados e finalização de assinatura.❓ FAQ Interativo (Accordion): Seção de perguntas frequentes com animação fluida de expansão/recolhimento.🍞 Sistema de Notificações Toast: Feedback visual imediato para ações do usuário (inscrição na newsletter, simulação de compra, etc.).🎨 Design System Customizado: Configuração personalizada do Tailwind CSS com paletas brand, spice e terracotta.🛠️ Tecnologias UtilizadasHTML5: Estrutura semântica e acessível.Tailwind CSS (CDN): Estilização ágil com classes utilitárias e paleta de cores customizada.JavaScript (Vanilla / ES6+): Lógica interativa do quiz, alternador de preços, modais e accordion (sem dependências externas de frameworks).FontAwesome 6: Ícones vetoriais dinâmicos.Google Fonts: Tipografia com as famílias Plus Jakarta Sans e Playfair Display.🚀 Como Executar o ProjetoComo a aplicação é contida em um único arquivo HTML estático (index.html), nenhuma etapa de compilação ou instalação de pacotes npm é necessária.Faça o download ou clone o repositório:git clone https://github.com/seu-usuario/clube-cheiro-verde.git
+Navegue até a pasta do projeto:cd clube-cheiro-verde
+Abra o arquivo no navegador:Dê um duplo clique no arquivo index.html, ouUtilize a extensão Live Server no VS Code para uma experiência de desenvolvimento em tempo real.📁 Estrutura de Arquivos.
+├── index.html     # Aplicação completa (HTML, Tailwind Config e Scripts JS)
+└── README.md      # Documentação do projeto
+💡 Próximos Passos & Melhorias Futuras[ ] Integração real com gateway de pagamento (Stripe / Pagar.me / Mercado Pago).[ ] Validação de CEP via API do ViaCEP para cálculo de frete dinâmico no checkout.[ ] Conexão do formulário de newsletter com serviços como Mailchimp ou RD Station.[ ] Galeria de fotos reais dos produtos da box do mês.📄 LicençaEste projeto está sob a licença MIT. Sinta-se livre para usar, estudar e adaptar para seus próprios projetos.
