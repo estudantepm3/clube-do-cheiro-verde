@@ -1,6 +1,62 @@
-🍃 Clube do Cheiro Verde — Landing PageLanding page moderna, responsiva e interativa para um clube de assinatura mensal de temperos e especiarias artesanais brasileiras.📌 Sobre o ProjetoO Clube do Cheiro Verde é um conceito de serviço de assinatura focado em levar mensalmente para a casa dos assinantes uma curadoria exclusiva de temperos, sais aromáticos, blends artesanais e especiarias de pequenos produtores rurais do Brasil.Esta landing page foi construída com foco em alta conversão, experiência de usuário fluida e identidade visual acolhedora (com tons terrosos, verde botânico e dourado especiaria).✨ Funcionalidades Principais📱 Layout Totalmente Responsivo: Adaptável para dispositivos móveis, tablets e desktops.🧙‍♂️ Quiz Interativo do Tempero: Questionário dinâmico em etapas que identifica o perfil de sabor do visitante e recomenda o plano ideal.💳 Alternador de Planos (Mensal vs. Anual): Exibição em tempo real do desconto de 20% e frete grátis ao comutar para o plano anual.🛍️ Simulação de Checkout (Modal): Pop-up responsivo para captação de dados e finalização de assinatura.❓ FAQ Interativo (Accordion): Seção de perguntas frequentes com animação fluida de expansão/recolhimento.🍞 Sistema de Notificações Toast: Feedback visual imediato para ações do usuário (inscrição na newsletter, simulação de compra, etc.).🎨 Design System Customizado: Configuração personalizada do Tailwind CSS com paletas brand, spice e terracotta.🛠️ Tecnologias UtilizadasHTML5: Estrutura semântica e acessível.Tailwind CSS (CDN): Estilização ágil com classes utilitárias e paleta de cores customizada.JavaScript (Vanilla / ES6+): Lógica interativa do quiz, alternador de preços, modais e accordion (sem dependências externas de frameworks).FontAwesome 6: Ícones vetoriais dinâmicos.Google Fonts: Tipografia com as famílias Plus Jakarta Sans e Playfair Display.🚀 Como Executar o ProjetoComo a aplicação é contida em um único arquivo HTML estático (index.html), nenhuma etapa de compilação ou instalação de pacotes npm é necessária.Faça o download ou clone o repositório:git clone https://github.com/seu-usuario/clube-cheiro-verde.git
-Navegue até a pasta do projeto:cd clube-cheiro-verde
-Abra o arquivo no navegador:Dê um duplo clique no arquivo index.html, ouUtilize a extensão Live Server no VS Code para uma experiência de desenvolvimento em tempo real.📁 Estrutura de Arquivos.
-├── index.html     # Aplicação completa (HTML, Tailwind Config e Scripts JS)
-└── README.md      # Documentação do projeto
-💡 Próximos Passos & Melhorias Futuras[ ] Integração real com gateway de pagamento (Stripe / Pagar.me / Mercado Pago).[ ] Validação de CEP via API do ViaCEP para cálculo de frete dinâmico no checkout.[ ] Conexão do formulário de newsletter com serviços como Mailchimp ou RD Station.[ ] Galeria de fotos reais dos produtos da box do mês.📄 LicençaEste projeto está sob a licença MIT. Sinta-se livre para usar, estudar e adaptar para seus próprios projetos.
+# 🌿 Clube do Cheiro Verde — Temperos Artesanais Brasileiros
+
+> Leve a autêntica biodiversidade culinária brasileira para a sua cozinha todos os meses.
+
+O **Clube do Cheiro Verde** é uma landing page moderna e responsiva para um serviço de assinatura mensal de temperos, pimentas e sais artesanais 100% brasileiros.
+
+---
+
+## 📌 Funcionalidades
+
+* **Hero Section com CTA:** Apresentação da proposta de valor com chamada direta para a assinatura.
+* **Quiz Interativo de Paladar:** 3 perguntas rápidas para descobrir o perfil culinário do usuário (Suave, Regional ou Pimenteiro) e recomendar o plano ideal.
+* **Alternador de Planos (Mensal / Anual):** Seletor interativo com cálculo dinâmico de desconto para pagamento anual.
+* **Modal de Checkout Simulado:** Modal com resumo do plano escolhido e formulário de inscrição.
+* **Seção de Depoimentos:** Avaliações de clientes com notas em estrelas.
+* **FAQ Sanfona (Accordion):** Perguntas frequentes com abertura e fechamento suaves.
+* **Design Responsivo & Temático:** Estilização com tons terrosos, verde-folha e toques de açafrão.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* **HTML5:** Estrutura semântica da página.
+* **Tailwind CSS (CDN):** Estilização utilitária rápida e responsiva.
+* **JavaScript (Vanilla):** Lógica do quiz, alternador de preços, modais e accordion do FAQ.
+* **Font Awesome:** Ícones visuais de culinária e navegação.
+* **Google Fonts:** Tipografias *Outfit* e *Playfair Display*.
+
+---
+
+## 📂 Estrutura de Arquivos
+
+```text
+clube-do-cheiro-verde/
+│
+├── index.html       # Landing page completa (HTML + Tailwind + JS)
+└── README.md        # Documentação do projeto
+```
+
+---
+
+## 🚀 Como Executar o Projeto
+
+1. Clone ou baixe este repositório.
+2. Abra o arquivo `index.html` diretamente em qualquer navegador moderno.
+3. Não requer instalação de dependências ou servidores locais.
+
+---
+
+## 📦 Planos Disponíveis
+
+| Plano | Preço Mensal | Preço Anual (Equivalente) | Indicado para |
+| :--- | :--- | :--- | :--- |
+| **Essencial** | R$ 49,90/mês | R$ 39,90/mês | Quem cozinha no dia a dia |
+| **Mestre Cuca** | R$ 79,90/mês | R$ 64,90/mês | Entusiastas e aventureiros |
+| **Chef Raiz** | R$ 119,90/mês | R$ 99,90/mês | Apaixonados por gastronomia |
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença [MIT](LICENSE).
