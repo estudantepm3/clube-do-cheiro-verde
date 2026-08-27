@@ -1,4 +1,4 @@
-# 🌿 Clube do Cheiro Verde — Temperos Artesanais Brasileiros
+# 🌿 Clube do Cheiro Verde
 
 > Leve a autêntica biodiversidade culinária brasileira para a sua cozinha todos os meses.
 
